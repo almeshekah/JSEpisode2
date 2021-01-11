@@ -19,7 +19,24 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
+  let pir =[];
+  let hf =0;
+  if (names.length % 2 ===0){
+    hf=2;
+  }else{
+    hf=3;
+  }
+  
+  for(let i =0 ; i<names.length ; i+=hf){
+    pir.push(names.slice(i,hf+i));
+
+  }
+
+  return pir;
 }
+//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
+//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])); 
+
 
 module.exports = pairs;
 
