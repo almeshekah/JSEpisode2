@@ -19,22 +19,28 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
-  let pir =[];
-  let hf =0;
-  if (names.length % 2 ===0){
-    hf=2;
-  }else{
-    hf=3;
-  }
+  const res = [];
   
-  for(let i =0 ; i<names.length ; i+=hf){
-    pir.push(names.slice(i,hf+i));
-
+  if (names.length > 0) {
+    let pair = [];
+    while (names.length !== 0) {
+      let first = names.getRandom();
+      let second = names.getRandom();
+      if (second !== undefined) {
+        pair = [first, second];
+      } else {
+        pair = [first];
+      }
+      res.push(pair);
+    }
+    return res;
   }
-
-  return pir;
+  if (names.length === 0 || names === null) {
+    return res;
+  }
 }
-//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
+//console.log(pairs([]));
+console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
 //console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])); 
 
 
@@ -58,4 +64,4 @@ Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random()*this.length), 1)[0];
 }
 
-console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
+//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
