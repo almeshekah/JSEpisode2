@@ -19,28 +19,28 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
-  const res = [];
+  const pi = [];
   
   if (names.length > 0) {
     let pair = [];
     while (names.length !== 0) {
-      let first = names.getRandom();
-      let second = names.getRandom();
-      if (second !== undefined) {
-        pair = [first, second];
+      let fi = names.pop();
+      let se = names.pop();
+      if (se !== undefined) {
+        pair = [fi, se];
       } else {
-        pair = [first];
+        pair = [fi];
       }
-      res.push(pair);
+      pi.push(pair);
     }
-    return res;
+    return pi;
   }
   if (names.length === 0 || names === null) {
-    return res;
+    return pi;
   }
 }
 //console.log(pairs([]));
-console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
+//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
 //console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])); 
 
 
