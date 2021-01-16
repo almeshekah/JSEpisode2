@@ -28,8 +28,8 @@ function pairs(names) {
   if (names.length > 0) {
     let pair = [];
     while (names.length > 0) {
-      let fi = names.getRandom();
-      let se = names.getRandom();
+      let fi = names.pop();
+      let se = names.pop();
       if (se !== undefined) {
         pair = [fi, se];
       } else {
