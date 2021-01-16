@@ -20,12 +20,16 @@
 function pairs(names) {
   // Your code goes here
   const pi = [];
+  const no = [];
+  if (names.length === 0 || names === null) {
+    return no;
+  }
   
   if (names.length > 0) {
     let pair = [];
-    while (names.length !== 0) {
-      let fi = names.pop();
-      let se = names.pop();
+    while (names.length > 0) {
+      let fi = names.getRandom();
+      let se = names.getRandom();
       if (se !== undefined) {
         pair = [fi, se];
       } else {
@@ -34,14 +38,12 @@ function pairs(names) {
       pi.push(pair);
     }
     return pi;
-  }
-  if (names.length === 0 || names === null) {
-    return pi;
-  }
+   }
+  
 }
 //console.log(pairs([]));
 //console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish']));
-//console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])); 
+console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein'])); 
 
 
 module.exports = pairs;
